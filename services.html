@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our comprehensive fitness services - yoga, HIIT, boxing, personal training and more. Book your perfect workout today!">
+    <meta name="keywords" content="fitness services, yoga classes, personal trainer, HIIT, boxing, pilates, workout booking">
+    
+    <title>Fitness Services - FitConnect | Book Classes & Personal Training</title>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Custom Properties - Energy Theme */
+        :root {
+            --primary-color: #f97316;
+            --primary-hover: #ea580c;
+            --primary-light: #fed7aa;
+            --secondary-color: #ef4444;
+            --secondary-hover: #dc2626;
+            --accent-color: #eab308;
+            --success-color: #22c55e;
+            
+            --text-primary: #1c1917;
+            --text-secondary: #44403c;
+            --text-tertiary: #78716c;
+            --text-light: #a8a29e;
+            --text-inverse: #ffffff;
+            
+            --bg-primary: #fefefe;
+            --bg-secondary: #fef2f2;
+            --bg-tertiary: #fed7d7;
+            --bg-overlay: rgba(239, 68, 68, 0.5);
+            
+            --border-color: #fed7d7;
+            --border-hover: #fca5a5;
+            --border-focus: #f97316;
+            
+            --shadow-sm: 0 1px 3px 0 rgba(249, 115, 22, 0.2);
+            --shadow-md: 0 4px 6px -1px rgba(249, 115, 22, 0.2);
+            --shadow-lg: 0 10px 15px -3px rgba(249, 115, 22, 0.2);
+            --shadow-xl: 0 20px 25px -5px rgba(249, 115, 22, 0.2);
+            
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --gradient-hero: linear-gradient(135deg, #fff7ed 0%, #fed7d7 50%, #fecaca 100%);
+            --gradient-fire: linear-gradient(45deg, #f97316, #ef4444, #eab308, #ef4444);
+            
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+            
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-full: 9999px;
+            
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        /* Reset and Base Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: var(--space-md);
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.25rem; }
+
+        p { margin-bottom: var(--space-md); }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover { color: var(--secondary-color); }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        /* Header Styles */
+        .main-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(254, 254, 254, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--primary-color);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .navbar {
+            padding: var(--space-md) 0;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .brand-logo {
+            height: 40px;
+            width: 40px;
+            border-radius: var(--radius-md);
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+        }
+
+        .brand-text {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-fire);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fire-gradient 3s ease-in-out infinite;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fire-gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--space-sm);
+            gap: 4px;
+        }
+
+        .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-primary);
+            transition: all var(--transition-fast);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: var(--space-lg);
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(239, 68, 68, 0.1));
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-sm) var(--space-lg);
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+            min-width: 120px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--text-inverse);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-lg), 0 0 30px rgba(249, 115, 22, 0.4);
+            color: var(--text-inverse);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 3px solid var(--primary-color);
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .btn-outline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-outline:hover::before {
+            width: 100%;
+        }
+
+        .btn-outline:hover {
+            color: var(--text-inverse);
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            padding: var(--space-md) var(--space-2xl);
+            font-size: 1.125rem;
+            min-width: 160px;
+        }
+
+        .btn-small {
+            padding: var(--space-xs) var(--space-md);
+            font-size: 0.75rem;
+            min-width: 80px;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--gradient-hero);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(249, 115, 22, 0.1), transparent, rgba(239, 68, 68, 0.1), transparent);
+            animation: rotate-energy 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate-energy {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: var(--space-lg);
+            background: var(--gradient-fire);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fire-gradient 3s ease-in-out infinite;
+            text-shadow: 0 2px 4px rgba(249, 115, 22, 0.3);
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .separator {
+            color: var(--text-light);
+        }
+
+        .current {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Search Section */
+        .search-section {
+            background: var(--bg-secondary);
+            padding: var(--space-xl) 0;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .search-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .search-input-group {
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .search-input {
+            flex: 1;
+            padding: var(--space-md);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: all var(--transition-fast);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.2);
+            transform: scale(1.02);
+        }
+
+        .search-filter {
+            min-width: 150px;
+            padding: var(--space-md);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            background-color: var(--bg-primary);
+            cursor: pointer;
+        }
+
+        .search-button {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all var(--transition-fast);
+        }
+
+        .search-button:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .filter-tags {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .filter-tag {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-xs) var(--space-sm);
+            background-color: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .filter-tag:hover,
+        .filter-tag.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: var(--space-3xl) 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .service-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            transition: all var(--transition-normal);
+            position: relative;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-xl), 0 0 30px rgba(249, 115, 22, 0.4);
+            transform: translateY(-8px) rotate(1deg);
+        }
+
+        .service-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-light), var(--bg-tertiary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-overlay {
+            position: absolute;
+            top: var(--space-md);
+            left: var(--space-md);
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        .service-category {
+            background: var(--gradient-primary);
+            color: white;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: var(--shadow-md), 0 0 20px rgba(249, 115, 22, 0.3);
+            animation: category-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes category-glow {
+            0%, 100% { box-shadow: var(--shadow-md), 0 0 20px rgba(249, 115, 22, 0.3); }
+            50% { box-shadow: var(--shadow-lg), 0 0 40px rgba(249, 115, 22, 0.6); }
+        }
+
+        .service-badge {
+            background: var(--success-color);
+            color: white;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .quick-actions {
+            position: absolute;
+            top: var(--space-md);
+            right: var(--space-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+
+        .service-card:hover .quick-actions {
+            opacity: 1;
+        }
+
+        .quick-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-full);
+            background-color: rgba(255, 255, 255, 0.9);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: all var(--transition-fast);
+        }
+
+        .quick-btn:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: var(--space-lg);
+        }
+
+        .service-title {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+        }
+
+        .service-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+            line-height: 1.6;
+        }
+
+        .service-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-md);
+            font-size: 0.875rem;
+        }
+
+        .service-duration {
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .service-price {
+            font-weight: 600;
+            font-size: 1.125rem;
+            background: var(--gradient-fire);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fire-gradient 3s ease-in-out infinite;
+        }
+
+        .service-trainer {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+            padding: var(--space-sm);
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+        }
+
+        .trainer-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: var(--radius-full);
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .trainer-name {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .service-actions {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .service-actions .btn {
+            flex: 1;
+            font-size: 0.875rem;
+        }
+
+        /* Footer */
+        .main-footer {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            border-top: 3px solid var(--primary-color);
+            padding: var(--space-2xl) 0 var(--space-lg);
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+
+        .footer-section h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer-section ul li a {
+            color: var(--text-secondary);
+            transition: color var(--transition-fast);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-brand {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.125rem;
+            transition: all var(--transition-fast);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-primary);
+                border-top: 1px solid var(--border-color);
+                flex-direction: column;
+                gap: 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: all var(--transition-fast);
+            }
+            
+            .nav-menu.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+                padding: var(--space-md) 0;
+            }
+            
+            .nav-link {
+                padding: var(--space-md);
+                border-radius: 0;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .auth-buttons {
+                padding: var(--space-md);
+                border-top: 1px solid var(--border-color);
+                justify-content: center;
+                width: 100%;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .search-input-group {
+                flex-direction: column;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-actions {
+                flex-direction: column;
+            }
+
+            .quick-actions {
+                position: static;
+                opacity: 1;
+                flex-direction: row;
+                justify-content: center;
+                margin-top: var(--space-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            .service-card {
+                margin: 0 -var(--space-md);
+                border-radius: 0;
+            }
+
+            .service-content {
+                padding: var(--space-md);
+            }
+
+            .filter-tags {
+                justify-content: center;
+            }
+        }
+
+        /* Animation for page load */
+        .animate-in {
+            animation: energy-slide-in 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        @keyframes energy-slide-in {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <div class="brand-logo">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <span class="brand-text">FitConnect</span>
+                </div>
+
+                <button class="mobile-toggle" aria-label="Toggle navigation menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link">
+                                <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="services.html" class="nav-link active">
+                                <i class="fas fa-dumbbell"></i> Services
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="trainers.html" class="nav-link">
+                                <i class="fas fa-users"></i> Trainers
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">
+                                <i class="fas fa-info-circle"></i> About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">
+                                <i class="fas fa-envelope"></i> Contact
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="auth-buttons">
+                        <a href="../auth/login.html" class="btn btn-outline btn-small">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
+                        <a href="../auth/register.html" class="btn btn-primary btn-small">
+                            <i class="fas fa-user-plus"></i> Sign Up
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="services-page">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Fitness Services</h1>
+                <p class="page-subtitle">Discover our comprehensive range of fitness classes and training options</p>
+                
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span class="separator">/</span>
+                    <span class="current">Services</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="container">
+                <form class="search-form">
+                    <div class="search-input-group">
+                        <input type="text" class="search-input" placeholder="Search for services, trainers, or activities..." />
+                        <select class="search-filter">
+                            <option value="">All Categories</option>
+                            <option value="yoga">Yoga</option>
+                            <option value="hiit">HIIT</option>
+                            <option value="boxing">Boxing</option>
+                            <option value="pilates">Pilates</option>
+                            <option value="strength">Strength</option>
+                            <option value="cardio">Cardio</option>
+                            <option value="nutrition">Nutrition</option>
+                            <option value="personal_training">Personal Training</option>
+                        </select>
+                        <button type="submit" class="search-button">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                    
+                    <div class="filter-tags">
+                        <span class="filter-label">Quick Filters:</span>
+                        <button type="button" class="filter-tag" data-filter="virtual">
+                            <i class="fas fa-video"></i> Virtual Classes
+                        </button>
+                        <button type="button" class="filter-tag" data-filter="beginner">
+                            <i class="fas fa-seedling"></i> Beginner Friendly
+                        </button>
+                        <button type="button" class="filter-tag" data-filter="available-today">
+                            <i class="fas fa-clock"></i> Available Today
+                        </button>
+                        <button type="button" class="filter-tag" data-filter="under-25">
+                            <i class="fas fa-dollar-sign"></i> Under $25
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="services-section">
+            <div class="container">
+                <div class="services-grid" id="services-container">
+                    
+                    <!-- Yoga Services -->
+                    <div class="service-card" data-category="yoga" data-price="18">
+                        <div class="service-image">
+                            <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #22c55e;">
+                                <img src="images/hatha-yoga.jpg" alt="hatha-yoga">
+                            </div>
+                            <div class="service-overlay">
+                                <span class="service-category">Yoga</span>
+                            </div>
+                            <div class="quick-actions">
+                                <button class="quick-btn" title="Add to Favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="quick-btn" title="Share">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-content">
+                            <h3 class="service-title">Hatha Yoga Fundamentals</h3>
+                            <p class="service-description">Perfect for beginners, this gentle yoga class focuses on basic postures, breathing techniques, and relaxation. Learn proper alignment and build flexibility in a supportive environment.</p>
+                            
+                            <div class="service-meta">
+                                <span class="service-duration">
+                                    <i class="fas fa-clock"></i>
+                                    60 min
+                                </span>
+                                <span class="service-price">From $18</span>
+                            </div>
+                            
+                            <div class="service-trainer">
+                                <div class="trainer-avatar">L</div>
+                                <span class="trainer-name">Lisa Rodriguez</span>
+                            </div>
+                            
+                            <div class="service-actions">
+                                <a href="#" class="btn btn-outline">Learn More</a>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-category="yoga" data-price="22">
+                        <div class="service-image">
+                            <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #22c55e;">
+                                <img src="images/vinyasa.jpg" alt="Power Vinyasa Flow">
+                            </div>
+                            <div class="service-overlay">
+                                <span class="service-category">Yoga</span>
+                            </div>
+                            <div class="quick-actions">
+                                <button class="quick-btn" title="Add to Favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="quick-btn" title="Share">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-content">
+                            <h3 class="service-title">Power Vinyasa Flow</h3>
+                            <p class="service-description">Dynamic, athletic-style yoga that builds strength and flexibility through flowing sequences. Connect breath with movement in this energizing practice.</p>
+                            
+                            <div class="service-meta">
+                                <span class="service-duration">
+                                    <i class="fas fa-clock"></i>
+                                    75 min
+                                </span>
+                                <span class="service-price">From $22</span>
+                            </div>
+                            
+                            <div class="service-trainer">
+                                <div class="trainer-avatar">L</div>
+                                <span class="trainer-name">Lisa Rodriguez</span>
+                            </div>
+                            
+                            <div class="service-actions">
+                                <a href="#" class="btn btn-outline">Learn More</a>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-category="yoga" data-price="25">
+                        <div class="service-image">
+                            <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #ef4444;">
+                                <img src="images/hot-yoga.jpg" alt="Hot Yoga Challenge">
+                            </div>
+                            <div class="service-overlay">
+                                <span class="service-category">Yoga</span>
+                            </div>
+                            <div class="quick-actions">
+                                <button class="quick-btn" title="Add to Favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="quick-btn" title="Share">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-content">
+                            <h3 class="service-title">Hot Yoga Challenge</h3>
+                            <p class="service-description">Practice traditional yoga poses in a heated room (38°C) to increase flexibility, detoxify the body, and build mental resilience. Towels and water bottles essential.</p>
+                            
+                            <div class="service-meta">
+                                <span class="service-duration">
+                                    <i class="fas fa-clock"></i>
+                                    30 min
+                                </span>
+                                <span class="service-price">From $25</span>
+                            </div>
+                            
+                            <div class="service-trainer">
+                                <div class="trainer-avatar">L</div>
+                                <span class="trainer-name">Lisa Rodriguez</span>
+                            </div>
+                            
+                            <div class="service-actions">
+                                <a href="#" class="btn btn-outline">Learn More</a>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HIIT Services -->
+                    <div class="service-card" data-category="hiit" data-price="20">
+                        <div class="service-image">
+                            <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #ef4444;">
+                                <img src="images/HIIT.jpg" alt="HIIT Bootcamp">
+                            </div>
+                            <div class="service-overlay">
+                                <span class="service-category">HIIT</span>
+                            </div>
+                            <div class="quick-actions">
+                                <button class="quick-btn" title="Add to Favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="quick-btn" title="Share">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-content">
+                            <h3 class="service-title">HIIT Bootcamp</h3>
+                            <p class="service-description">High-intensity interval training combining cardio and strength exercises. Burn maximum calories in minimal time with varied workouts that prevent plateaus.</p>
+                            
+                            <div class="service-meta">
+                                <span class="service-duration">
+                                    <i class="fas fa-clock"></i>
+                                    45 min
+                                </span>
+                                <span class="service-price">From $20</span>
+                            </div>
+                            
+                            <div class="service-trainer">
+                                <div class="trainer-avatar">M</div>
+                                <span class="trainer-name">Mike Chen</span>
+                            </div>
+                            
+                            <div class="service-actions">
+                                <a href="#" class="btn btn-outline">Learn More</a>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-category="hiit" data-price="12">
+                        <div class="service-image">
+                            <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #eab308;">
+                                <img src="images/tabata.jpg" alt="Tabata Express">
+                            </div>
+                            <div class="service-overlay">
+                                <span class="service-category">HIIT</span>
+                            </div>
+                            <div class="quick-actions">
+                                <button class="quick-btn" title="Add to Favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="quick-btn" title="Share">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-content">
+                            <h3 class="service-title">Tabata Express</h3>
+                            <p class="service-description">Ultra-efficient 20-minute Tabata protocol workouts. 4-minute cycles of 20 seconds all-out effort followed by 10 seconds rest. Perfect for busy schedules.</p>
+                            
+                            <div class="service-meta">
+                                <span class="service-duration">
+                                    <i class="fas fa-clock"></i>
+                                    20 min
+                                </span>
+                                <span class="service-price">From $12</span>
+                            </div>
+                            
+                            <div class="service-trainer">
+                                <div class="trainer-avatar">M</div>
+                                <span class="trainer-name">Mike Chen</span>
+                            </div>
+                            
+                            <div class="service-actions">
+                                <a href="#" class="btn btn-outline">Learn More</a>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-category="hiit" data-price="28">
+                        <div class="service-image">
+                            <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #ef4444;">
+                                <img src="images/core-fusion.jpg" alt="Advanced HIIT">
+                            </div>
+                            <div class="service-overlay">
+                                <span class="service-category">HIIT</span>
+                            </div>
+                            <div class="quick-actions">
+                                <button class="quick-btn" title="Add to Favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="quick-btn" title="Share">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-content">
+                            <h3 class="service-title">HIIT & Core Fusion</h3>
+                            <p class="service-description">Combine high-intensity intervals with targeted core strengthening exercises. Build cardiovascular fitness while developing a strong, stable midsection.</p>
+                            
+                            <div class="service-meta">
+                                <span class="service-duration">
+                                    <i class="fas fa-clock"></i>
+                                    60 min
+                                </span>
+                                <span class="service-price">From $28</span>
+                            </div>
+                            
+                            <div class="service-trainer">
+                                <div class="trainer-avatar">M</div>
+                                <span class="trainer-name">Mike Chen</span>
+                            </div>
+                            
+                            <div class="service-actions">
+                                <a href="#" class="btn btn-outline">Learn More</a>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <!-- Boxing Services -->
+                    <div class="service-card" data-category="boxing" data-price="30">
+                        <div class="service-image">
+                            <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #eab308;">
+                                <img src="images/boxing.jpg" alt="Boxing Fundamentals">
+                            </div>
+                            <div class="service-overlay">
+                                <span class="service-category">Boxing</span>
+                            </div>
+                            <div class="quick-actions">
+                                <button class="quick-btn" title="Add to Favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="quick-btn" title="Share">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-content">
+                            <h3 class="service-title">Boxing Fundamentals</h3>
+                            <p class="service-description">Learn proper boxing technique, footwork, and combinations. Includes heavy bag work, mitt training, and basic defensive movements. All skill levels welcome.</p>
+                            
+                            <div class="service-meta">
+                                <span class="service-duration">
+                                    <i class="fas fa-clock"></i>
+                                    60 min
+                                </span>
+                                <span class="service-price">From $30</span>
+                            </div>
+                            
+                            <div class="service-trainer">
+                                <div class="trainer-avatar">D</div>
+                                <span class="trainer-name">David Lee</span>
+                            </div>
+                            
+                            <div class="service-actions">
+                                <a href="#" class="btn btn-outline">Learn More</a>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-category="boxing" data-price="35">
+                        <div class="service-image">
+                            <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #eab308;">
+                                <img src="images/kickboxing.jpg" alt="Kickboxing">
+                            </div>
+                            <div class="service-overlay">
+                                <span class="service-category">Boxing</span>
+                            </div>
+                            <div class="quick-actions">
+                                <button class="quick-btn" title="Add to Favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="quick-btn" title="Share">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-content">
+                            <h3 class="service-title">Kickboxing Cardio</h3>
+                            <p class="service-description">High-energy cardio workout incorporating boxing and martial arts techniques. Great for stress relief, coordination, and full-body conditioning without contact.</p>
+                            
+                            <div class="service-meta">
+                                <span class="service-duration">
+                                    <i class="fas fa-clock"></i>
+                                    90 min
+                                </span>
+                                <span class="service-price">From $35</span>
+                            </div>
+                            
+                            <div class="service-trainer">
+                                <div class="trainer-avatar">D</div>
+                                <span class="trainer-name">David Lee</span>
+                            </div>
+                            
+                            <div class="service-actions">
+                                <a href="#" class="btn btn-outline">Learn More</a>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-category="boxing" data-price="40">
+                        <div class="service-image">
+                            <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #eab308;">
+                                <img src="images/sparring.jpg" alt="Advanced Sparring & Technique">
+                            </div>
+                            <div class="service-overlay">
+                                <span class="service-category">Boxing</span>
+                                <span class="service-badge">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Advanced
+                                </span>
+                            </div>
+                            <div class="quick-actions">
+                                <button class="quick-btn" title="Add to Favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="quick-btn" title="Share">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-content">
+                            <h3 class="service-title">Advanced Sparring & Technique</h3>
+                            <p class="service-description">For experienced boxers only. Controlled sparring sessions with focus on advanced combinations, ring strategy, and competitive preparation. Safety gear required.</p>
+                            
+                            <div class="service-meta">
+                                <span class="service-duration">
+                                    <i class="fas fa-clock"></i>
+                                    90 min
+                                </span>
+                                <span class="service-price">From $40</span>
+                            </div>
+                            
+                            <div class="service-trainer">
+                                <div class="trainer-avatar">D</div>
+                                <span class="trainer-name">David Lee</span>
+                            </div>
+                            
+                            <div class="service-actions">
+                                <a href="#" class="btn btn-outline">Learn More</a>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Training -->
+                    <div class="service-card" data-category="personal_training" data-price="85">
+                        <div class="service-image">
+                            <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #f97316;">
+                                <img src="images/personal.jpg" alt="Personal Training">
+                            </div>
+                            <div class="service-overlay">
+                                <span class="service-category">Personal Training</span>
+                            </div>
+                            <div class="quick-actions">
+                                <button class="quick-btn" title="Add to Favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="quick-btn" title="Share">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-content">
+                            <h3 class="service-title">Personal Training Session</h3>
+                            <p class="service-description">One-on-one training tailored to your specific goals, fitness level, and schedule. Includes program design, form correction, and motivation coaching.</p>
+                            
+                            <div class="service-meta">
+                                <span class="service-duration">
+                                    <i class="fas fa-clock"></i>
+                                    60 min
+                                </span>
+                                <span class="service-price">From $25</span>
+                            </div>
+                            
+                            <div class="service-trainer">
+                                <div class="trainer-avatar">MI</div>
+                                <span class="trainer-name">Mike Chen</span>
+                            </div>
+                            
+                            <div class="service-actions">
+                                <a href="#" class="btn btn-outline">Learn More</a>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-category="personal_training" data-price="60">
+                        <div class="service-image">
+                            <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #f97316;">
+                                <img src="images/group.jpg" alt="Semi-Private Training">
+                            </div>
+                            <div class="service-overlay">
+                                <span class="service-category">Personal Training</span>
+                                <span class="service-badge">
+                                    <i class="fas fa-user-friends"></i>
+                                    Small Group
+                                </span>
+                            </div>
+                            <div class="quick-actions">
+                                <button class="quick-btn" title="Add to Favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="quick-btn" title="Share">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-content">
+                            <h3 class="service-title">Semi-Private Training</h3>
+                            <p class="service-description">Train with a friend or small group (2-3 people) for personalized attention at a reduced cost. Great for couples or training partners with similar goals.</p>
+                            
+                            <div class="service-meta">
+                                <span class="service-duration">
+                                    <i class="fas fa-clock"></i>
+                                    60 min
+                                </span>
+                                <span class="service-price">From $60</span>
+                            </div>
+                            
+                            <div class="service-trainer">
+                                <div class="trainer-avatar">MI</div>
+                                <span class="trainer-name">Mike Chen</span>
+                            </div>
+                            
+                            <div class="service-actions">
+                                <a href="#" class="btn btn-outline">Learn More</a>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Virtual Yoga -->
+                    <div class="service-card" data-category="yoga" data-price="15">
+                        <div class="service-image">
+                            <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #22c55e;">
+                                <img src="images/virtual-yoga.jpg" alt="Virtual Yoga">
+                            </div>
+                            <div class="service-overlay">
+                                <span class="service-category">Yoga</span>
+                                <span class="service-badge">
+                                    <i class="fas fa-video"></i>
+                                    Virtual
+                                </span>
+                            </div>
+                            <div class="quick-actions">
+                                <button class="quick-btn" title="Add to Favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="quick-btn" title="Share">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-content">
+                            <h3 class="service-title">Virtual Yoga Sessions</h3>
+                            <p class="service-description">Join our live online yoga classes from the comfort of your home. Includes personalized adjustments via video chat and access to recorded sessions.</p>
+                            
+                            <div class="service-meta">
+                                <span class="service-duration">
+                                    <i class="fas fa-clock"></i>
+                                    60 min
+                                </span>
+                                <span class="service-price">From $15</span>
+                            </div>
+                            
+                            <div class="service-trainer">
+                                <div class="trainer-avatar">M</div>
+                                <span class="trainer-name">Maria Abalkin</span>
+                            </div>
+                            
+                            <div class="service-actions">
+                                <a href="#" class="btn btn-outline">Learn More</a>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pilates Services -->
+<div class="service-card" data-category="pilates" data-price="20">
+    <div class="service-image">
+        <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #22c55e;">
+            <img src="images/mat-pilates.jpg" alt="Mat Pilates Basics">
+        </div>
+        <div class="service-overlay">
+            <span class="service-category">Pilates</span>
+        </div>
+        <div class="quick-actions">
+            <button class="quick-btn" title="Add to Favorites">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="quick-btn" title="Share">
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="service-content">
+        <h3 class="service-title">Mat Pilates Basics</h3>
+        <p class="service-description">Foundation class focusing on core strength, flexibility, and body awareness using traditional mat exercises. Learn the Pilates principles and proper breathing techniques.</p>
+        
+        <div class="service-meta">
+            <span class="service-duration">
+                <i class="fas fa-clock"></i>
+                50 min
+            </span>
+            <span class="service-price">From $20</span>
+        </div>
+        
+        <div class="service-trainer">
+            <div class="trainer-avatar">E</div>
+            <span class="trainer-name">Emma Wilson</span>
+        </div>
+        
+        <div class="service-actions">
+            <a href="#" class="btn btn-outline">Learn More</a>
+            <a href="#" class="btn btn-primary">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<div class="service-card" data-category="pilates" data-price="18">
+    <div class="service-image">
+        <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #22c55e;">
+            <img src="images/reformer-pilates.jpg" alt="Mat Pilates">
+        </div>
+        <div class="service-overlay">
+            <span class="service-category">Pilates</span>
+        </div>
+        <div class="quick-actions">
+            <button class="quick-btn" title="Add to Favorites">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="quick-btn" title="Share">
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="service-content">
+        <h3 class="service-title">Reformer Pilates</h3>
+        <p class="service-description">Use the Pilates reformer machine for resistance-based exercises that challenge strength, flexibility, and coordination. Provides support while increasing exercise difficulty.</p>
+        
+        <div class="service-meta">
+            <span class="service-duration">
+                <i class="fas fa-clock"></i>
+                45 min
+            </span>
+            <span class="service-price">From $18</span>
+        </div>
+        
+        <div class="service-trainer">
+            <div class="trainer-avatar">S</div>
+            <span class="trainer-name">Emma Wilson</span>
+        </div>
+        
+        <div class="service-actions">
+            <a href="#" class="btn btn-outline">Learn More</a>
+            <a href="#" class="btn btn-primary">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Strength Training -->
+<div class="service-card" data-category="strength" data-price="25">
+    <div class="service-image">
+        <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #f97316;">
+            <img src="images/weight-training.jpg" alt="Weight Training">
+        </div>
+        <div class="service-overlay">
+            <span class="service-category">Strength</span>
+        </div>
+        <div class="quick-actions">
+            <button class="quick-btn" title="Add to Favorites">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="quick-btn" title="Share">
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="service-content">
+        <h3 class="service-title">Beginner Weight Training</h3>
+        <p class="service-description">Introduction to weight training with focus on proper form, safety, and progressive overload. Learn to use free weights, machines, and basic compound movements.</p>
+        
+        <div class="service-meta">
+            <span class="service-duration">
+                <i class="fas fa-clock"></i>
+                60 min
+            </span>
+            <span class="service-price">From $25</span>
+        </div>
+        
+        <div class="service-trainer">
+            <div class="trainer-avatar">M</div>
+            <span class="trainer-name">Alex Brown</span>
+        </div>
+        
+        <div class="service-actions">
+            <a href="#" class="btn btn-outline">Learn More</a>
+            <a href="#" class="btn btn-primary">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<div class="service-card" data-category="strength" data-price="30">
+    <div class="service-image">
+        <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #f97316;">
+            <img src="images/powerlifting.jpg" alt="Powerlifting">
+        </div>
+        <div class="service-overlay">
+            <span class="service-category">Strength</span>
+        </div>
+        <div class="quick-actions">
+            <button class="quick-btn" title="Add to Favorites">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="quick-btn" title="Share">
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="service-content">
+        <h3 class="service-title">Powerlifting Techniques</h3>
+        <p class="service-description">Learn proper technique for squat, bench press, and deadlift. Focus on building strength through progressive overload with proper form.</p>
+        
+        <div class="service-meta">
+            <span class="service-duration">
+                <i class="fas fa-clock"></i>
+                90 min
+            </span>
+            <span class="service-price">From $30</span>
+        </div>
+        
+        <div class="service-trainer">
+            <div class="trainer-avatar">A</div>
+            <span class="trainer-name">Alex Brown</span>
+        </div>
+        
+        <div class="service-actions">
+            <a href="#" class="btn btn-outline">Learn More</a>
+            <a href="#" class="btn btn-primary">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<div class="service-card" data-category="strength" data-price="22">
+    <div class="service-image">
+        <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #f97316;">
+            <img src="images/crossfit.jpg" alt="CrossFit Fundamentals">
+        </div>
+        <div class="service-overlay">
+            <span class="service-category">Strength</span>
+        </div>
+        <div class="quick-actions">
+            <button class="quick-btn" title="Add to Favorites">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="quick-btn" title="Share">
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="service-content">
+        <h3 class="service-title">CrossFit Fundamentals</h3>
+        <p class="service-description">Learn the foundations of CrossFit including Olympic lifts, gymnastics movements, and metabolic conditioning. Scalable for all fitness levels.</p>
+        
+        <div class="service-meta">
+            <span class="service-duration">
+                <i class="fas fa-clock"></i>
+                45 min
+            </span>
+            <span class="service-price">From $22</span>
+        </div>
+        
+        <div class="service-trainer">
+            <div class="trainer-avatar">A</div>
+            <span class="trainer-name">Alex Brown</span>
+        </div>
+        
+        <div class="service-actions">
+            <a href="#" class="btn btn-outline">Learn More</a>
+            <a href="#" class="btn btn-primary">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Cardio Services -->
+<div class="service-card" data-category="cardio" data-price="18">
+    <div class="service-image">
+        <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #ef4444;">
+            <img src="images/spin-class.jpg" alt="Spin Class Express">
+        </div>
+        <div class="service-overlay">
+            <span class="service-category">Cardio</span>
+        </div>
+        <div class="quick-actions">
+            <button class="quick-btn" title="Add to Favorites">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="quick-btn" title="Share">
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="service-content">
+        <h3 class="service-title">Spin Class Express</h3>
+        <p class="service-description">High-energy indoor cycling with motivating music and varied terrain simulation. Adjustable intensity for all fitness levels with heart rate monitoring.</p>
+        
+        <div class="service-meta">
+            <span class="service-duration">
+                <i class="fas fa-clock"></i>
+                45 min
+            </span>
+            <span class="service-price">From $18</span>
+        </div>
+        
+        <div class="service-trainer">
+            <div class="trainer-avatar">D</div>
+            <span class="trainer-name">Jenny Kim</span>
+        </div>
+        
+        <div class="service-actions">
+            <a href="#" class="btn btn-outline">Learn More</a>
+            <a href="#" class="btn btn-primary">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<div class="service-card" data-category="cardio" data-price="25">
+    <div class="service-image">
+        <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #ef4444;">
+            <img src="images/zumba.jpg" alt="Zumba Dance Fitness">
+        </div>
+        <div class="service-overlay">
+            <span class="service-category">Cardio</span>
+            <span class="service-badge">
+                <i class="fas fa-music"></i>
+                Dance
+            </span>
+        </div>
+        <div class="quick-actions">
+            <button class="quick-btn" title="Add to Favorites">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="quick-btn" title="Share">
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="service-content">
+        <h3 class="service-title">Zumba Dance Fitness</h3>
+        <p class="service-description">Fun, dance-based cardio workout featuring Latin and international music. Easy-to-follow choreography that feels more like a party than exercise!</p>
+        
+        <div class="service-meta">
+            <span class="service-duration">
+                <i class="fas fa-clock"></i>
+                60 min
+            </span>
+            <span class="service-price">From $25</span>
+        </div>
+        
+        <div class="service-trainer">
+            <div class="trainer-avatar">S</div>
+            <span class="trainer-name">Jenny Kim</span>
+        </div>
+        
+        <div class="service-actions">
+            <a href="#" class="btn btn-outline">Learn More</a>
+            <a href="#" class="btn btn-primary">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Nutrition Services -->
+<div class="service-card" data-category="nutrition" data-price="50">
+    <div class="service-image">
+        <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #22c55e;">
+            <img src="images/nutrition.jpg" alt="Nutrition Coaching">
+        </div>
+        <div class="service-overlay">
+            <span class="service-category">Nutrition</span>
+            <span class="service-badge">
+                <i class="fas fa-video"></i>
+                Virtual
+            </span>
+        </div>
+        <div class="quick-actions">
+            <button class="quick-btn" title="Add to Favorites">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="quick-btn" title="Share">
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="service-content">
+        <h3 class="service-title">Nutrition Consultation</h3>
+        <p class="service-description">One-on-one nutrition assessment and meal planning with registered dietitian. Includes body composition analysis, goal setting, and personalized recommendations.</p>
+        
+        <div class="service-meta">
+            <span class="service-duration">
+                <i class="fas fa-clock"></i>
+                60 min
+            </span>
+            <span class="service-price">From $50</span>
+        </div>
+        
+        <div class="service-trainer">
+            <div class="trainer-avatar">S</div>
+            <span class="trainer-name">Carlos Martinez</span>
+        </div>
+        
+        <div class="service-actions">
+            <a href="#" class="btn btn-outline">Learn More</a>
+            <a href="#" class="btn btn-primary">Book Now</a>
+        </div>
+    </div>
+</div>      
+
+<div class="service-card" data-category="nutrition" data-price="40">
+    <div class="service-image">
+        <div style="background: linear-gradient(135deg, #fed7aa, #fecaca); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #22c55e;">
+            <img src="images/meal-plan.jpg" alt="Meal Planning">
+        </div>
+        <div class="service-overlay">
+            <span class="service-category">Nutrition</span>
+        </div>
+        <div class="quick-actions">
+            <button class="quick-btn" title="Add to Favorites">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="quick-btn" title="Share">
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="service-content">
+        <h3 class="service-title">Meal Prep Workshop</h3>
+        <p class="service-description">Learn practical meal preparation strategies for healthy eating. Hands-on cooking class covering batch cooking, portion control, and storage techniques.'</p>
+        
+        <div class="service-meta">
+            <span class="service-duration">
+                <i class="fas fa-clock"></i>
+                60 min
+            </span>
+            <span class="service-price">From $40</span>
+        </div>
+        
+        <div class="service-trainer">
+            <div class="trainer-avatar">S</div>
+            <span class="trainer-name">Carlos Martinez</span>
+        </div>
+        
+        <div class="service-actions">
+            <a href="#" class="btn btn-outline">Learn More</a>
+            <a href="#" class="btn btn-primary">Book Now</a>
+        </div>
+    </div>
+</div>
+
+</div>
+            
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="brand-logo">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <span class="footer-brand">FitConnect</span>
+                    </div>
+                    <p class="footer-description">
+                        Your premier fitness platform connecting you with expert trainers and comprehensive wellness services.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="trainers.html">Trainers</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="help/getting-started.html">Getting Started</a></li>
+                        <li><a href="help/booking-guide.html">Booking Guide</a></li>
+                        <li><a href="help/faq.html">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div style="color: var(--text-secondary);">
+                        <p><i class="fas fa-phone"></i> 519-555-FITC</p>
+                        <p><i class="fas fa-envelope"></i> info@fitconnect.ca</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Windsor, ON, Canada</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 6AM-10PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitConnect. All rights reserved. | University of Windsor CS Project</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    
+                    const lines = mobileToggle.querySelectorAll('.hamburger-line');
+                    if (navMenu.classList.contains('active')) {
+                        lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                        lines[1].style.opacity = '0';
+                        lines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                    } else {
+                        lines[0].style.transform = 'none';
+                        lines[1].style.opacity = '1';
+                        lines[2].style.transform = 'none';
+                    }
+                });
+            }
+
+            // Filter functionality
+            const filterTags = document.querySelectorAll('.filter-tag');
+            const serviceCards = document.querySelectorAll('.service-card');
+            const searchInput = document.querySelector('.search-input');
+            const categoryFilter = document.querySelector('.search-filter');
+
+            // Filter tag functionality
+            filterTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    applyFilters();
+                });
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', applyFilters);
+            categoryFilter.addEventListener('change', applyFilters);
+
+            function applyFilters() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedCategory = categoryFilter.value;
+                const activeFilters = Array.from(document.querySelectorAll('.filter-tag.active')).map(tag => tag.dataset.filter);
+
+                serviceCards.forEach(card => {
+                    let show = true;
+
+                    // Search term filter
+                    if (searchTerm) {
+                        const title = card.querySelector('.service-title').textContent.toLowerCase();
+                        const description = card.querySelector('.service-description').textContent.toLowerCase();
+                        const trainer = card.querySelector('.trainer-name').textContent.toLowerCase();
+                        
+                        if (!title.includes(searchTerm) && !description.includes(searchTerm) && !trainer.includes(searchTerm)) {
+                            show = false;
+                        }
+                    }
+
+                    // Category filter
+                    if (selectedCategory && card.dataset.category !== selectedCategory) {
+                        show = false;
+                    }
+
+                    // Active filters
+                    activeFilters.forEach(filter => {
+                        if (filter === 'virtual' && !card.querySelector('.service-badge')) {
+                            show = false;
+                        }
+                        if (filter === 'under-25' && parseInt(card.dataset.price) >= 25) {
+                            show = false;
+                        }
+                        // Add more filter logic as needed
+                    });
+
+                    // Show/hide card with animation
+                    if (show) {
+                        card.style.display = 'block';
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(-20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            }
+
+            // Favorite functionality
+            document.querySelectorAll('.quick-btn').forEach(btn => {
+                if (btn.querySelector('.fa-heart')) {
+                    btn.addEventListener('click', function() {
+                        const icon = this.querySelector('i');
+                        if (icon.classList.contains('far')) {
+                            icon.classList.remove('far');
+                            icon.classList.add('fas');
+                            this.title = 'Remove from Favorites';
+                        } else {
+                            icon.classList.remove('fas');
+                            icon.classList.add('far');
+                            this.title = 'Add to Favorites';
+                        }
+                    });
+                }
+            });
+
+            // Share functionality
+            document.querySelectorAll('.quick-btn').forEach(btn => {
+                if (btn.querySelector('.fa-share-alt')) {
+                    btn.addEventListener('click', function() {
+                        const serviceTitle = this.closest('.service-card').querySelector('.service-title').textContent;
+                        const url = window.location.href;
+                        
+                        if (navigator.share) {
+                            navigator.share({
+                                title: `FitConnect - ${serviceTitle}`,
+                                url: url
+                            });
+                        } else {
+                            navigator.clipboard.writeText(url).then(() => {
+                                alert('Link copied to clipboard!');
+                            });
+                        }
+                    });
+                }
+            });
+
+            // Load more functionality (simulated)
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+                    
+                    setTimeout(() => {
+                        alert('All services loaded! In a real implementation, this would load more services from the database.');
+                        this.innerHTML = '<i class="fas fa-check"></i> All Services Loaded';
+                        this.disabled = true;
+                    }, 1500);
+                });
+            }
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe service cards
+            serviceCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
+                        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our comprehensive fitness services - yoga, HIIT, boxing, personal training and more. Book your perfect workout today!">
+    <meta name="keywords" content="fitness services, yoga classes, personal trainer, HIIT, boxing, pilates, workout booking">
+    
+    <title>Fitness Services - FitConnect | Book Classes & Personal Training</title>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis

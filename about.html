@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about FitConnect - Your premier fitness platform connecting you with expert trainers and comprehensive wellness services in Windsor, Ontario.">
+    <meta name="keywords" content="about fitconnect, fitness platform, wellness, personal trainers, windsor ontario, gym classes">
+    
+    <title>About FitConnect - Your Premier Fitness Platform</title>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Custom Properties - Energy Theme */
+        :root {
+            --primary-color: #f97316;
+            --primary-hover: #ea580c;
+            --primary-light: #fed7aa;
+            --secondary-color: #ef4444;
+            --secondary-hover: #dc2626;
+            --accent-color: #eab308;
+            --success-color: #22c55e;
+            
+            --text-primary: #1c1917;
+            --text-secondary: #44403c;
+            --text-tertiary: #78716c;
+            --text-light: #a8a29e;
+            --text-inverse: #ffffff;
+            
+            --bg-primary: #fefefe;
+            --bg-secondary: #fef2f2;
+            --bg-tertiary: #fed7d7;
+            --bg-overlay: rgba(239, 68, 68, 0.5);
+            
+            --border-color: #fed7d7;
+            --border-hover: #fca5a5;
+            --border-focus: #f97316;
+            
+            --shadow-sm: 0 1px 3px 0 rgba(249, 115, 22, 0.2);
+            --shadow-md: 0 4px 6px -1px rgba(249, 115, 22, 0.2);
+            --shadow-lg: 0 10px 15px -3px rgba(249, 115, 22, 0.2);
+            --shadow-xl: 0 20px 25px -5px rgba(249, 115, 22, 0.2);
+            
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --gradient-hero: linear-gradient(135deg, #fff7ed 0%, #fed7d7 50%, #fecaca 100%);
+            --gradient-fire: linear-gradient(45deg, #f97316, #ef4444, #eab308, #ef4444);
+            
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+            
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-full: 9999px;
+            
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        /* Reset and Base Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: var(--space-md);
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.25rem; }
+
+        p { margin-bottom: var(--space-md); }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover { color: var(--secondary-color); }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        /* Header Styles */
+        .main-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(254, 254, 254, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--primary-color);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .navbar {
+            padding: var(--space-md) 0;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .brand-logo {
+            height: 40px;
+            width: 40px;
+            border-radius: var(--radius-md);
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+        }
+
+        .brand-text {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-fire);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fire-gradient 3s ease-in-out infinite;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fire-gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--space-sm);
+            gap: 4px;
+        }
+
+        .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-primary);
+            transition: all var(--transition-fast);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: var(--space-lg);
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(239, 68, 68, 0.1));
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-sm) var(--space-lg);
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+            min-width: 120px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--text-inverse);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-lg), 0 0 30px rgba(249, 115, 22, 0.4);
+            color: var(--text-inverse);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 3px solid var(--primary-color);
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .btn-outline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-outline:hover::before {
+            width: 100%;
+        }
+
+        .btn-outline:hover {
+            color: var(--text-inverse);
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            padding: var(--space-md) var(--space-2xl);
+            font-size: 1.125rem;
+            min-width: 160px;
+        }
+
+        .btn-small {
+            padding: var(--space-xs) var(--space-md);
+            font-size: 0.75rem;
+            min-width: 80px;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--gradient-hero);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(249, 115, 22, 0.1), transparent, rgba(239, 68, 68, 0.1), transparent);
+            animation: rotate-energy 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate-energy {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: var(--space-lg);
+            background: var(--gradient-fire);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fire-gradient 3s ease-in-out infinite;
+            text-shadow: 0 2px 4px rgba(249, 115, 22, 0.3);
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .separator {
+            color: var(--text-light);
+        }
+
+        .current {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: var(--space-3xl) 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            position: relative;
+            background: var(--gradient-fire);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fire-gradient 3s ease-in-out infinite;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -var(--space-sm);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            margin-bottom: var(--space-2xl);
+        }
+
+        /* Mission Section */
+        .mission-section {
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .mission-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+
+        .mission-text h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--space-lg);
+        }
+
+        .mission-statement {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xl);
+            padding: var(--space-lg);
+            background: rgba(249, 115, 22, 0.1);
+            border-left: 4px solid var(--primary-color);
+            border-radius: var(--radius-md);
+        }
+
+        .mission-video {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .mission-video video {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        /* Values Section */
+        .values-section {
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .value-card {
+            text-align: center;
+            padding: var(--space-xl);
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--border-color);
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: conic-gradient(from 0deg, transparent, rgba(249, 115, 22, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .value-card:hover::before {
+            opacity: 1;
+            animation: rotate-slow 4s linear infinite;
+        }
+
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .value-card:hover {
+            border-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: var(--shadow-xl), 0 0 40px rgba(249, 115, 22, 0.6);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--space-lg);
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: var(--shadow-lg), 0 0 20px rgba(249, 115, 22, 0.3);
+            animation: icon-float 3s ease-in-out infinite;
+        }
+
+        @keyframes icon-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--gradient-primary);
+            color: white;
+            position: relative;
+            animation: pulse-energy 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-energy {
+            0%, 100% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.6); }
+            50% { box-shadow: 0 0 60px rgba(249, 115, 22, 0.8); }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: var(--space-xl);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all var(--transition-normal);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: var(--space-sm);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .stat-label {
+            font-size: 1.125rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .stat-description {
+            font-size: 0.875rem;
+            opacity: 0.7;
+            margin-top: var(--space-sm);
+        }
+
+        /* Team Section */
+        .team-section {
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .team-member {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            transition: all var(--transition-normal);
+            position: relative;
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover::before {
+            transform: scaleX(1);
+        }
+
+        .team-member:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-xl), 0 0 30px rgba(249, 115, 22, 0.4);
+            transform: translateY(-8px);
+        }
+
+        .member-image {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-light), var(--bg-tertiary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .member-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+
+        .team-member:hover .member-overlay {
+            opacity: 1;
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.125rem;
+            transition: all var(--transition-fast);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+        }
+
+        .member-info {
+            padding: var(--space-lg);
+        }
+
+        .member-info h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--space-sm);
+        }
+
+        .member-role {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+        }
+
+        .member-bio {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Location Section */
+        .location-section {
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+
+        .map-container {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--border-color);
+        }
+
+        .map-frame {
+            height: 400px;
+            width: 100%;
+        }
+
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .location-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+        }
+
+        .location-card {
+            background: var(--bg-primary);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .location-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .location-card h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--space-md);
+        }
+
+        .location-card address {
+            font-style: normal;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+        }
+
+        .location-details p {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+            color: var(--text-secondary);
+        }
+
+        .location-details i {
+            color: var(--primary-color);
+            width: 16px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            position: relative;
+            animation: pulse-energy 4s ease-in-out infinite;
+        }
+
+        .cta-content h2 {
+            color: white;
+            margin-bottom: var(--space-lg);
+            font-size: 2.5rem;
+        }
+
+        .cta-content p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+        }
+
+        .cta-buttons .btn-primary {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .cta-buttons .btn-outline {
+            border-color: white;
+            color: white;
+        }
+
+        .cta-buttons .btn-outline:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        .main-footer {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            border-top: 3px solid var(--primary-color);
+            padding: var(--space-2xl) 0 var(--space-lg);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+
+        .footer-section h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer-section ul li a {
+            color: var(--text-secondary);
+            transition: color var(--transition-fast);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-brand {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-primary);
+                border-top: 1px solid var(--border-color);
+                flex-direction: column;
+                gap: 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: all var(--transition-fast);
+            }
+            
+            .nav-menu.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+                padding: var(--space-md) 0;
+            }
+            
+            .nav-link {
+                padding: var(--space-md);
+                border-radius: 0;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .auth-buttons {
+                padding: var(--space-md);
+                border-top: 1px solid var(--border-color);
+                justify-content: center;
+                width: 100%;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .mission-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: var(--space-xl);
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .location-info {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .mission-statement {
+                padding: var(--space-md);
+            }
+
+            .value-card,
+            .team-member,
+            .location-card {
+                margin: 0 -var(--space-md);
+                border-radius: 0;
+            }
+        }
+
+        /* Animation for page load */
+        .animate-in {
+            animation: energy-slide-in 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        @keyframes energy-slide-in {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <div class="brand-logo">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <span class="brand-text">FitConnect</span>
+                </div>
+
+                <button class="mobile-toggle" aria-label="Toggle navigation menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link">
+                                <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="services.html" class="nav-link">
+                                <i class="fas fa-dumbbell"></i> Services
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="trainers.html" class="nav-link">
+                                <i class="fas fa-users"></i> Trainers
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link active">
+                                <i class="fas fa-info-circle"></i> About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">
+                                <i class="fas fa-envelope"></i> Contact
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="auth-buttons">
+                        <a href="../auth/login.html" class="btn btn-outline btn-small">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
+                        <a href="../auth/register.html" class="btn btn-primary btn-small">
+                            <i class="fas fa-user-plus"></i> Sign Up
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="about-page">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">About FitConnect</h1>
+                <p class="page-subtitle">Revolutionizing fitness through technology, community, and expert guidance</p>
+                
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span class="separator">/</span>
+                    <span class="current">About</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="mission-section section">
+            <div class="container">
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <h2>Our Mission</h2>
+                        <p class="mission-statement">
+                            At FitConnect, we believe that fitness should be accessible, enjoyable, and transformative for everyone. 
+                            Our platform bridges the gap between fitness enthusiasts and expert trainers, creating a community 
+                            where wellness goals become achievable realities.
+                        </p>
+                        <p>
+                            Founded in 2025 as a University of Windsor Computer Science project, FitConnect has evolved into 
+                            a comprehensive fitness ecosystem that combines cutting-edge technology with personalized human guidance. 
+                            We're not just another booking platform – we're your partner in building a healthier, stronger, 
+                            and more confident version of yourself.
+                        </p>
+                    </div>
+                    <div class="mission-video">
+                        <video controls poster="images/mission-poster.jpg">
+                            <source src="images/mission-video.mp4" type="video/mp4">
+                            <source src="../assets/videos/mission-video.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values-section section">
+            <div class="container">
+                <h2 class="section-title">Our Core Values</h2>
+                <p class="section-subtitle">The principles that guide everything we do</p>
+                
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Inclusivity</h3>
+                        <p>Fitness is for everyone, regardless of age, ability, or experience level. We create welcoming spaces where all individuals can pursue their wellness journey with confidence.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Excellence</h3>
+                        <p>We maintain the highest standards in trainer certification, service quality, and user experience. Excellence isn't just a goal – it's our standard.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Innovation</h3>
+                        <p>Technology should enhance, not complicate, your fitness journey. We continuously innovate to provide smarter, more intuitive solutions for your wellness needs.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Community</h3>
+                        <p>Strength comes from connection. We foster a supportive community where members motivate each other and celebrate shared achievements.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Safety</h3>
+                        <p>Your well-being is paramount. All our trainers are certified professionals, and our facilities maintain the highest safety standards.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Growth</h3>
+                        <p>We believe in continuous improvement – both for our platform and for every individual who joins our community. Progress is a journey, not a destination.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="stats-section section">
+            <div class="container">
+                <h2 class="section-title" style="color: white;">FitConnect by the Numbers</h2>
+                <div class="stats-grid">
+                    <div class="stat-card" data-target="500">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Active Members</div>
+                        <div class="stat-description">Growing community of fitness enthusiasts</div>
+                    </div>
+                    
+                    <div class="stat-card" data-target="8">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Expert Trainers</div>
+                        <div class="stat-description">Certified professionals across all disciplines</div>
+                    </div>
+                    
+                    <div class="stat-card" data-target="24">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Service Types</div>
+                        <div class="stat-description">Comprehensive fitness and wellness options</div>
+                    </div>
+                    
+                    <div class="stat-card" data-target="1200">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Sessions Completed</div>
+                        <div class="stat-description">Successful transformations and counting</div>
+                    </div>
+                    
+                    <div class="stat-card" data-target="98">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                        <div class="stat-description">Percentage of members who recommend us</div>
+                    </div>
+                    
+                    <div class="stat-card" data-target="8">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Fitness Categories</div>
+                        <div class="stat-description">From yoga to powerlifting, we cover it all</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section section">
+            <div class="container">
+                <h2 class="section-title">Meet Our Leadership Team</h2>
+                <p class="section-subtitle">The passionate individuals driving FitConnect's mission forward</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image" >
+                            <div style="font-size: 4rem; color: var(--primary-color);">
+                                <img src="images/sarah.jpg" alt="Sarah Johnson - Founder & CEO">
+                            </div>
+                            <div class="member-overlay">
+                                <div class="social-links">
+                                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Sarah Johnson</h3>
+                            <p class="member-role">Founder & CEO</p>
+                            <p class="member-bio">Computer Science graduate with a passion for fitness technology. Former competitive athlete turned entrepreneur, dedicated to making wellness accessible through innovation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-image">
+                            <div style="font-size: 4rem; color: var(--primary-color);">
+                                <img src="images/mike.jpg" alt="Mike Chen - Chief Technology Officer">
+                            </div>
+                            <div class="member-overlay">
+                                <div class="social-links">
+                                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Mike Chen</h3>
+                            <p class="member-role">Chief Technology Officer</p>
+                            <p class="member-bio">Full-stack developer and fitness enthusiast. Leads our technical vision, ensuring our platform remains cutting-edge, secure, and user-friendly.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-image">
+                            <div style="font-size: 4rem; color: var(--primary-color);">
+                                <img src="images/lisa1.jpg" alt="Lisa Rodriguez - Head Training of Programs">
+                            </div>
+                            <div class="member-overlay">
+                                <div class="social-links">
+                                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Lisa Rodriguez</h3>
+                            <p class="member-role">Head of Training Programs</p>
+                            <p class="member-bio">Certified in multiple fitness disciplines with 10+ years of experience. Develops our training standards and ensures quality across all services.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-image">
+                            <div style="font-size: 4rem; color: var(--primary-color);">
+                                <img src="images/david.jpg" alt="David Johnson - Community Manager">
+                            </div>
+                            <div class="member-overlay">
+                                <div class="social-links">
+                                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3>David Lee</h3>
+                            <p class="member-role">Community Manager</p>
+                            <p class="member-bio">Psychology background with expertise in motivation and behavior change. Builds and nurtures our vibrant fitness community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section class="location-section section">
+            <div class="container">
+                <h2 class="section-title">Our Locations</h2>
+                <p class="section-subtitle">Find FitConnect partner studios and facilities near you</p>
+                
+                <div class="map-container">
+                    <div class="map-frame">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.8547573630463!2d-83.06770168454243!3d42.31403397918715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883b2d26cb0e9a4b%3A0x7d1c7f7b3b3b3b3b!2sUniversity%20of%20Windsor!5e0!3m2!1sen!2sca!4v1234567890123!5m2!1sen!2sca"
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="FitConnect Locations Map">
+                        </iframe>
+                    </div>
+                </div>
+                
+                <div class="location-info">
+                    <div class="location-card">
+                        <h3>Main Campus Studio</h3>
+                        <address>
+                            <i class="fas fa-map-marker-alt"></i>
+                            University of Windsor<br>
+                            401 Sunset Avenue<br>
+                            Windsor, ON N9B 3P4
+                        </address>
+                        <div class="location-details">
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 6AM-10PM</p>
+                            <p><i class="fas fa-clock"></i> Sat-Sun: 7AM-8PM</p>
+                            <p><i class="fas fa-phone"></i> 519-555-FITC</p>
+                        </div>
+                    </div>
+                    
+                    <div class="location-card">
+                        <h3>Downtown Partner Studio</h3>
+                        <address>
+                            <i class="fas fa-map-marker-alt"></i>
+                            123 Ouellette Avenue<br>
+                            Windsor, ON N9A 1B2
+                        </address>
+                        <div class="location-details">
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 5AM-11PM</p>
+                            <p><i class="fas fa-clock"></i> Sat-Sun: 6AM-10PM</p>
+                            <p><i class="fas fa-phone"></i> 519-555-DOWNTOWN</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Start Your Fitness Journey?</h2>
+                    <p>Join the FitConnect community and discover a new way to achieve your wellness goals with expert guidance and cutting-edge technology.</p>
+                    <div class="cta-buttons">
+                        <a href="../auth/register.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-rocket"></i>
+                            Get Started Today
+                        </a>
+                        <a href="services.html" class="btn btn-outline btn-large">
+                            <i class="fas fa-search"></i>
+                            Explore Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="brand-logo">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <span class="footer-brand">FitConnect</span>
+                    </div>
+                    <p class="footer-description">
+                        Your premier fitness platform connecting you with expert trainers and comprehensive wellness services.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="trainers.html">Trainers</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="help/getting-started.html">Getting Started</a></li>
+                        <li><a href="help/booking-guide.html">Booking Guide</a></li>
+                        <li><a href="help/faq.html">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div style="color: var(--text-secondary);">
+                        <p><i class="fas fa-phone"></i> 519-555-FITC</p>
+                        <p><i class="fas fa-envelope"></i> info@fitconnect.ca</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Windsor, ON, Canada</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitConnect. All rights reserved. | University of Windsor CS Project</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    
+                    const lines = mobileToggle.querySelectorAll('.hamburger-line');
+                    if (navMenu.classList.contains('active')) {
+                        lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                        lines[1].style.opacity = '0';
+                        lines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                    } else {
+                        lines[0].style.transform = 'none';
+                        lines[1].style.opacity = '1';
+                        lines[2].style.transform = 'none';
+                    }
+                });
+            }
+
+            // Counter Animation for Statistics
+            function animateCounters() {
+                const counters = document.querySelectorAll('.stat-card');
+                
+                counters.forEach(counter => {
+                    const target = parseInt(counter.dataset.target);
+                    const numberElement = counter.querySelector('.stat-number');
+                    let current = 0;
+                    const increment = target / 100;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            numberElement.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            numberElement.textContent = Math.floor(current);
+                        }
+                    }, 20);
+                });
+            }
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        
+                        // Trigger counter animation for stats section
+                        if (entry.target.classList.contains('stats-section')) {
+                            animateCounters();
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.value-card, .team-member, .stat-card, .stats-section, .location-card').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

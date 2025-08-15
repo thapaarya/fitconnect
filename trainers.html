@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet our certified fitness trainers at FitConnect. Expert professionals in yoga, HIIT, boxing, personal training and more. Book your session today!">
+    <meta name="keywords" content="fitness trainers, personal trainers, yoga instructors, boxing coaches, HIIT trainers, certified professionals">
+    
+    <title>Meet Our Expert Trainers - FitConnect | Certified Fitness Professionals</title>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Custom Properties - Energy Theme */
+        :root {
+            --primary-color: #f97316;
+            --primary-hover: #ea580c;
+            --primary-light: #fed7aa;
+            --secondary-color: #ef4444;
+            --secondary-hover: #dc2626;
+            --accent-color: #eab308;
+            --success-color: #22c55e;
+            
+            --text-primary: #1c1917;
+            --text-secondary: #44403c;
+            --text-tertiary: #78716c;
+            --text-light: #a8a29e;
+            --text-inverse: #ffffff;
+            
+            --bg-primary: #fefefe;
+            --bg-secondary: #fef2f2;
+            --bg-tertiary: #fed7d7;
+            --bg-overlay: rgba(239, 68, 68, 0.5);
+            
+            --border-color: #fed7d7;
+            --border-hover: #fca5a5;
+            --border-focus: #f97316;
+            
+            --shadow-sm: 0 1px 3px 0 rgba(249, 115, 22, 0.2);
+            --shadow-md: 0 4px 6px -1px rgba(249, 115, 22, 0.2);
+            --shadow-lg: 0 10px 15px -3px rgba(249, 115, 22, 0.2);
+            --shadow-xl: 0 20px 25px -5px rgba(249, 115, 22, 0.2);
+            
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --gradient-hero: linear-gradient(135deg, #fff7ed 0%, #fed7d7 50%, #fecaca 100%);
+            --gradient-fire: linear-gradient(45deg, #f97316, #ef4444, #eab308, #ef4444);
+            
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+            
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-full: 9999px;
+            
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        /* Reset and Base Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: var(--space-md);
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.25rem; }
+
+        p { margin-bottom: var(--space-md); }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover { color: var(--secondary-color); }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        /* Header Styles */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(254, 254, 254, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--primary-color);
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-normal);
+        }
+
+        .navbar {
+            padding: var(--space-md) 0;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .brand-logo {
+            height: 40px;
+            width: 40px;
+            border-radius: var(--radius-md);
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+        }
+
+        .brand-text {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-fire);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fire-gradient 3s ease-in-out infinite;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fire-gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--space-sm);
+            gap: 4px;
+        }
+
+        .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-primary);
+            transition: all var(--transition-fast);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: var(--space-lg);
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(239, 68, 68, 0.1));
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-sm) var(--space-lg);
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+            min-width: 120px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--text-inverse);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-lg), 0 0 30px rgba(249, 115, 22, 0.4);
+            color: var(--text-inverse);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 3px solid var(--primary-color);
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .btn-outline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-outline:hover::before {
+            width: 100%;
+        }
+
+        .btn-outline:hover {
+            color: var(--text-inverse);
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            padding: var(--space-md) var(--space-2xl);
+            font-size: 1.125rem;
+            min-width: 160px;
+        }
+
+        .btn-small {
+            padding: var(--space-xs) var(--space-md);
+            font-size: 0.75rem;
+            min-width: 80px;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--gradient-hero);
+            padding: calc(80px + var(--space-3xl)) 0 var(--space-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(249, 115, 22, 0.1), transparent, rgba(239, 68, 68, 0.1), transparent);
+            animation: rotate-energy 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate-energy {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: var(--space-lg);
+            background: var(--gradient-fire);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fire-gradient 3s ease-in-out infinite;
+            text-shadow: 0 2px 4px rgba(249, 115, 22, 0.3);
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .separator {
+            color: var(--text-light);
+        }
+
+        .current {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background: var(--bg-secondary);
+            padding: var(--space-xl) 0;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .filter-controls {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-full);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        /* Featured Trainer Section */
+        .featured-trainer {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            padding: var(--space-3xl) 0;
+        }
+
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+
+        .featured-image {
+            position: relative;
+            height: 400px;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-light), var(--bg-tertiary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .featured-info h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--space-md);
+        }
+
+        .featured-title {
+            color: var(--secondary-color);
+            font-size: 1.125rem;
+            margin-bottom: var(--space-lg);
+        }
+
+        .achievement-list {
+            list-style: none;
+            margin-bottom: var(--space-lg);
+        }
+
+        .achievement-list li {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+            color: var(--text-secondary);
+        }
+
+        .achievement-list i {
+            color: var(--success-color);
+            width: 20px;
+        }
+
+        /* Trainers Section */
+        .trainers-section {
+            padding: var(--space-3xl) 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            position: relative;
+            background: var(--gradient-fire);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fire-gradient 3s ease-in-out infinite;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -var(--space-sm);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+        }
+
+        .trainers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .trainer-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            transition: all var(--transition-normal);
+            position: relative;
+        }
+
+        .trainer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .trainer-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .trainer-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-xl), 0 0 30px rgba(249, 115, 22, 0.4);
+            transform: translateY(-8px) rotate(1deg);
+        }
+
+        .trainer-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-light), var(--bg-tertiary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .trainer-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+
+        .trainer-card:hover .trainer-overlay {
+            opacity: 1;
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.125rem;
+            transition: all var(--transition-fast);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+        }
+
+        .trainer-content {
+            padding: var(--space-lg);
+        }
+
+        .trainer-name {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: var(--space-sm);
+        }
+
+        .trainer-specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+        }
+
+        .specialty-tag {
+            background: var(--gradient-primary);
+            color: white;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: var(--shadow-sm), 0 0 10px rgba(249, 115, 22, 0.3);
+        }
+
+        .trainer-bio {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-lg);
+        }
+
+        .trainer-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--space-lg);
+            padding: var(--space-md);
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .trainer-rate {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+            padding: var(--space-md);
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            border-radius: var(--radius-md);
+            border: 2px solid var(--border-color);
+        }
+
+        .rate-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.125rem;
+        }
+
+        .rate-info h4 {
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        .rate-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: var(--gradient-fire);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fire-gradient 3s ease-in-out infinite;
+        }
+
+        .trainer-actions {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .trainer-actions .btn {
+            flex: 1;
+            font-size: 0.875rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            padding: var(--space-3xl) 0;
+            position: relative;
+            animation: pulse-energy 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-energy {
+            0%, 100% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.6); }
+            50% { box-shadow: 0 0 60px rgba(249, 115, 22, 0.8); }
+        }
+
+        .cta-content h2 {
+            color: white;
+            margin-bottom: var(--space-lg);
+            font-size: 2.5rem;
+        }
+
+        .cta-content p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+        }
+
+        .cta-buttons .btn-primary {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .cta-buttons .btn-outline {
+            border-color: white;
+            color: white;
+        }
+
+        .cta-buttons .btn-outline:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        .main-footer {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            border-top: 3px solid var(--primary-color);
+            padding: var(--space-2xl) 0 var(--space-lg);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+
+        .footer-section h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer-section ul li a {
+            color: var(--text-secondary);
+            transition: color var(--transition-fast);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-brand {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-primary);
+                border-top: 1px solid var(--border-color);
+                flex-direction: column;
+                gap: 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: all var(--transition-fast);
+            }
+            
+            .nav-menu.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+                padding: var(--space-md) 0;
+            }
+            
+            .nav-link {
+                padding: var(--space-md);
+                border-radius: 0;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .auth-buttons {
+                padding: var(--space-md);
+                border-top: 1px solid var(--border-color);
+                justify-content: center;
+                width: 100%;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .filter-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .trainers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .trainer-actions {
+                flex-direction: column;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            .trainer-card {
+                margin: 0 -var(--space-md);
+                border-radius: 0;
+            }
+
+            .trainer-content {
+                padding: var(--space-md);
+            }
+
+            .trainer-stats {
+                flex-direction: column;
+                gap: var(--space-md);
+                text-align: center;
+            }
+        }
+
+        /* Animation for page load */
+        .animate-in {
+            animation: energy-slide-in 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        @keyframes energy-slide-in {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .trainer-video {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: var(--radius-xl);
+        }
+
+         /* Fallback for browsers that don't support video */
+        .featured-image {
+              position: relative;
+              overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-container">
+                    <div class="nav-brand">
+                        <div class="brand-logo">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <span class="brand-text">FitConnect</span>
+                    </div>
+
+                    <button class="mobile-toggle" aria-label="Toggle navigation menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+
+                    <div class="nav-menu">
+                        <ul class="nav-links">
+                            <li class="nav-item">
+                                <a href="../index.html" class="nav-link">
+                                    <i class="fas fa-home"></i> Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="services.html" class="nav-link">
+                                    <i class="fas fa-dumbbell"></i> Services
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="trainers.html" class="nav-link active">
+                                    <i class="fas fa-users"></i> Trainers
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="about.html" class="nav-link">
+                                    <i class="fas fa-info-circle"></i> About
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="contact.html" class="nav-link">
+                                    <i class="fas fa-envelope"></i> Contact
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="auth-buttons">
+                            <a href="../auth/login.html" class="btn btn-outline btn-small">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </a>
+                            <a href="../auth/register.html" class="btn btn-primary btn-small">
+                                <i class="fas fa-user-plus"></i> Sign Up
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="trainers-page">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Meet Our Expert Trainers</h1>
+                <p class="page-subtitle">Connect with certified fitness professionals who are passionate about your success</p>
+                
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span class="separator">/</span>
+                    <span class="current">Trainers</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="container">
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All Trainers</button>
+                    <button class="filter-btn" data-filter="yoga">Yoga</button>
+                    <button class="filter-btn" data-filter="strength">Strength</button>
+                    <button class="filter-btn" data-filter="cardio">Cardio</button>
+                    <button class="filter-btn" data-filter="boxing">Boxing</button>
+                    <button class="filter-btn" data-filter="nutrition">Nutrition</button>
+                </div>
+            </div>
+        </section>
+
+            <!-- Featured Trainer -->
+            <section class="featured-trainer">
+                <div class="container">
+                    <div class="featured-content">
+                        <div class="featured-image">
+                            <img src="images/lisa1.jpg" alt="Lisa Rodriguez" class="trainer-photo">
+                        </div>
+                            <div class="featured-info">
+                                <h2>Trainer of the Month</h2>
+                                <h3>Lisa Rodriguez</h3>
+                                <p class="featured-title">Certified Yoga Instructor & Wellness Coach</p>
+                                <p>Lisa brings over 10 years of experience in yoga and mindfulness practices. She specializes in helping beginners develop a strong foundation while challenging advanced practitioners to deepen their practice.</p>
+                                
+                                <ul class="achievement-list">
+                                    <li><i class="fas fa-check-circle"></i> RYT-500 Certified Yoga Teacher</li>
+                                    <li><i class="fas fa-check-circle"></i> Mindfulness-Based Stress Reduction Certified</li>
+                                    <li><i class="fas fa-check-circle"></i> 500+ Students Trained</li>
+                                    <li><i class="fas fa-check-circle"></i> Featured in Yoga Journal Magazine</li>
+                                </ul>
+                                
+                                <div style="display: flex; gap: var(--space-md);">
+                                    <a href="#" class="btn btn-primary">Book Session</a>
+                                    <a href="#" class="btn btn-outline">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Trainers Grid -->
+        <section class="trainers-section">
+            <div class="container">
+                <h2 class="section-title">Our Certified Trainers</h2>
+                
+                <div class="trainers-grid" id="trainers-container">
+                    
+                    <!-- Trainer 1 - Mike Chen -->
+                    <div class="trainer-card" data-specialty="strength personal-training">
+                        <div class="trainer-image">
+                            <div style="font-size: 4rem; color: var(--primary-color);">
+                                <img src="images/mike.jpg" alt="Mike Chen">
+                            </div>
+                            <div class="trainer-overlay">
+                                <div class="social-links">
+                                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="trainer-content">
+                            <h3 class="trainer-name">Mike Chen</h3>
+                            <div class="trainer-specialties">
+                                <span class="specialty-tag">Strength Training</span>
+                                <span class="specialty-tag">HIIT</span>
+                                <span class="specialty-tag">Personal Training</span>
+                            </div>
+                            <p class="trainer-bio">Certified personal trainer specializing in strength training and HIIT workouts. 8 years of experience helping clients achieve their fitness goals through progressive training methods.</p>
+                            
+                            <div class="trainer-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">8+</span>
+                                    <span class="stat-label">Years Experience</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">300+</span>
+                                    <span class="stat-label">Clients Trained</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.9</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-rate">
+                                <div class="rate-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="rate-info">
+                                    <h4>Personal Training</h4>
+                                    <span class="rate-price">$25/hour</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-actions">
+                                <a href="#" class="btn btn-outline">View Profile</a>
+                                <a href="#" class="btn btn-primary">Book Session</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trainer 2 - Lisa Rodriguez -->
+                    <div class="trainer-card" data-specialty="yoga">
+                        <div class="trainer-image">
+                            <div style="font-size: 4rem; color: var(--success-color);">
+                                <img src="images/lisa1.jpg" alt="Lisa Rodriguez">
+                            </div>
+                            <div class="trainer-overlay">
+                                <div class="social-links">
+                                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="trainer-content">
+                            <h3 class="trainer-name">Lisa Rodriguez</h3>
+                            <div class="trainer-specialties">
+                                <span class="specialty-tag">Yoga</span>
+                                <span class="specialty-tag">Meditation</span>
+                                <span class="specialty-tag">Flexibility</span>
+                            </div>
+                            <p class="trainer-bio">Registered Yoga Teacher (RYT-500) with expertise in various yoga styles. Passionate about mindfulness and holistic wellness, helping students find balance in body and mind.</p>
+                            
+                            <div class="trainer-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">10+</span>
+                                    <span class="stat-label">Years Experience</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">500+</span>
+                                    <span class="stat-label">Students</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">5.0</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-rate">
+                                <div class="rate-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="rate-info">
+                                    <h4>Yoga Classes</h4>
+                                    <span class="rate-price">$25/hour</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-actions">
+                                <a href="#" class="btn btn-outline">View Profile</a>
+                                <a href="#" class="btn btn-primary">Book Session</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trainer 3 - David Lee -->
+                    <div class="trainer-card" data-specialty="boxing">
+                        <div class="trainer-image">
+                            <div style="font-size: 4rem; color: var(--secondary-color);">
+                                <img src="images/david.jpg" alt="David Lee">
+                            </div>
+                            <div class="trainer-overlay">
+                                <div class="social-links">
+                                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="trainer-content">
+                            <h3 class="trainer-name">David Lee</h3>
+                            <div class="trainer-specialties">
+                                <span class="specialty-tag">Boxing</span>
+                                <span class="specialty-tag">Kickboxing</span>
+                                <span class="specialty-tag">Self-Defense</span>
+                            </div>
+                            <p class="trainer-bio">Former amateur boxer turned certified boxing instructor. Specializes in technique, conditioning, and self-defense. Creates challenging yet safe training environments for all skill levels.</p>
+                            
+                            <div class="trainer-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">12+</span>
+                                    <span class="stat-label">Years Experience</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">200+</span>
+                                    <span class="stat-label">Fighters Trained</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.8</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-rate">
+                                <div class="rate-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="rate-info">
+                                    <h4>Boxing Training</h4>
+                                    <span class="rate-price">$25/hour</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-actions">
+                                <a href="#" class="btn btn-outline">View Profile</a>
+                                <a href="#" class="btn btn-primary">Book Session</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trainer 4 - Emma Wilson -->
+                    <div class="trainer-card" data-specialty="pilates strength">
+                        <div class="trainer-image">
+                            <div style="font-size: 4rem; color: var(--accent-color);">
+                                <img src="images/emma.jpg" alt="Emma Wilson">
+                            </div>
+                            <div class="trainer-overlay">
+                                <div class="social-links">
+                                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="trainer-content">
+                            <h3 class="trainer-name">Emma Wilson</h3>
+                            <div class="trainer-specialties">
+                                <span class="specialty-tag">Pilates</span>
+                                <span class="specialty-tag">Core Training</span>
+                                <span class="specialty-tag">Rehabilitation</span>
+                            </div>
+                            <p class="trainer-bio">Certified Pilates instructor with classical training. Focuses on core strength, posture improvement, and rehabilitation. Specializes in working with clients recovering from injuries.</p>
+                            
+                            <div class="trainer-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">7+</span>
+                                    <span class="stat-label">Years Experience</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">250+</span>
+                                    <span class="stat-label">Clients</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.9</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-rate">
+                                <div class="rate-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="rate-info">
+                                    <h4>Pilates Classes</h4>
+                                    <span class="rate-price">$20/hour</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-actions">
+                                <a href="#" class="btn btn-outline">View Profile</a>
+                                <a href="#" class="btn btn-primary">Book Session</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trainer 5 - Carlos Martinez -->
+                    <div class="trainer-card" data-specialty="nutrition">
+                        <div class="trainer-image">
+                            <div style="font-size: 4rem; color: var(--success-color);">
+                                <img src="images/carlos.jpg" alt="Carlos Martinez">
+                            </div>
+                            <div class="trainer-overlay">
+                                <div class="social-links">
+                                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="trainer-content">
+                            <h3 class="trainer-name">Carlos Martinez</h3>
+                            <div class="trainer-specialties">
+                                <span class="specialty-tag">Nutrition</span>
+                                <span class="specialty-tag">Meal Planning</span>
+                                <span class="specialty-tag">Weight Management</span>
+                            </div>
+                            <p class="trainer-bio">Registered Dietitian and nutrition coach. Helps clients develop sustainable eating habits and meal planning strategies. Specializes in sports nutrition and weight management.</p>
+                            
+                            <div class="trainer-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">9+</span>
+                                    <span class="stat-label">Years Experience</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">400+</span>
+                                    <span class="stat-label">Clients</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.8</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-rate">
+                                <div class="rate-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="rate-info">
+                                    <h4>Nutrition Coaching</h4>
+                                    <span class="rate-price">$20/hour</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-actions">
+                                <a href="#" class="btn btn-outline">View Profile</a>
+                                <a href="#" class="btn btn-primary">Book Session</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trainer 6 - Jenny Kim -->
+                    <div class="trainer-card" data-specialty="cardio">
+                        <div class="trainer-image">
+                            <div style="font-size: 4rem; color: var(--secondary-color);">
+                                <img src="images/jenny.jpg" alt="Jenny Kim">
+                            </div>
+                            <div class="trainer-overlay">
+                                <div class="social-links">
+                                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="trainer-content">
+                            <h3 class="trainer-name">Jenny Kim</h3>
+                            <div class="trainer-specialties">
+                                <span class="specialty-tag">Cardio</span>
+                                <span class="specialty-tag">Zumba</span>
+                                <span class="specialty-tag">Group Fitness</span>
+                            </div>
+                            <p class="trainer-bio">High-energy fitness instructor specializing in cardio workouts, Zumba, and group fitness classes. Creates fun, motivating environments that make exercise feel like a party.</p>
+                            
+                            <div class="trainer-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">6+</span>
+                                    <span class="stat-label">Years Experience</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">600+</span>
+                                    <span class="stat-label">Class Attendees</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.9</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-rate">
+                                <div class="rate-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="rate-info">
+                                    <h4>Cardio Classes</h4>
+                                    <span class="rate-price">$25/hour</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-actions">
+                                <a href="#" class="btn btn-outline">View Profile</a>
+                                <a href="#" class="btn btn-primary">Book Session</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trainer 7 - Alex Brown -->
+                    <div class="trainer-card" data-specialty="strength cardio">
+                        <div class="trainer-image">
+                            <div style="font-size: 4rem; color: var(--primary-color);">
+                                <img src="images/alex.jpg" alt="Alex Brown">
+                            </div>
+                            <div class="trainer-overlay">
+                                <div class="social-links">
+                                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="trainer-content">
+                            <h3 class="trainer-name">Alex Brown</h3>
+                            <div class="trainer-specialties">
+                                <span class="specialty-tag">CrossFit</span>
+                                <span class="specialty-tag">Olympic Lifting</span>
+                                <span class="specialty-tag">Functional Training</span>
+                            </div>
+                            <p class="trainer-bio">CrossFit Level 2 trainer with background in Olympic weightlifting. Passionate about functional fitness and athletic performance. Helps athletes reach their competitive potential.</p>
+                            
+                            <div class="trainer-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">11+</span>
+                                    <span class="stat-label">Years Experience</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">180+</span>
+                                    <span class="stat-label">Athletes Trained</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.7</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-rate">
+                                <div class="rate-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="rate-info">
+                                    <h4>CrossFit Training</h4>
+                                    <span class="rate-price">$30/hour</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-actions">
+                                <a href="#" class="btn btn-outline">View Profile</a>
+                                <a href="#" class="btn btn-primary">Book Session</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trainer 8 - Maria Abalkin -->
+                    <div class="trainer-card" data-specialty="yoga cardio">
+                        <div class="trainer-image">
+                            <div style="font-size: 4rem; color: var(--success-color);">
+                                <img src="images/maria.jpg" alt="Maria Abalkin">
+                            </div>
+                            <div class="trainer-overlay">
+                                <div class="social-links">
+                                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="trainer-content">
+                            <h3 class="trainer-name">Maria Abalkin</h3>
+                            <div class="trainer-specialties">
+                                <span class="specialty-tag">Power Yoga</span>
+                                <span class="specialty-tag">Barre</span>
+                                <span class="specialty-tag">Dance Fitness</span>
+                            </div>
+                            <p class="trainer-bio">Dynamic yoga instructor combining traditional poses with modern fitness techniques. Specializes in power yoga, barre classes, and dance-inspired workouts that build strength and flexibility.</p>
+                            
+                            <div class="trainer-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">5+</span>
+                                    <span class="stat-label">Years Experience</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">320+</span>
+                                    <span class="stat-label">Students</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.8</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-rate">
+                                <div class="rate-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="rate-info">
+                                    <h4>Power Yoga & Barre</h4>
+                                    <span class="rate-price">$28/hour</span>
+                                </div>
+                            </div>
+                            
+                            <div class="trainer-actions">
+                                <a href="#" class="btn btn-outline">View Profile</a>
+                                <a href="#" class="btn btn-primary">Book Session</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Start Training?</h2>
+                    <p>Connect with our expert trainers and begin your transformation journey today. Whether you're a beginner or advanced athlete, we have the perfect trainer for you.</p>
+                    <div class="cta-buttons">
+                        <a href="services.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-search"></i>
+                            Browse Services
+                        </a>
+                        <a href="../auth/register.html" class="btn btn-outline btn-large">
+                            <i class="fas fa-user-plus"></i>
+                            Join FitConnect
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="brand-logo">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <span class="footer-brand">FitConnect</span>
+                    </div>
+                    <p class="footer-description">
+                        Your premier fitness platform connecting you with expert trainers and comprehensive wellness services.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="trainers.html">Trainers</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="help/getting-started.html">Getting Started</a></li>
+                        <li><a href="help/booking-guide.html">Booking Guide</a></li>
+                        <li><a href="help/faq.html">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div style="color: var(--text-secondary);">
+                        <p><i class="fas fa-phone"></i> 519-555-FITC</p>
+                        <p><i class="fas fa-envelope"></i> info@fitconnect.ca</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Windsor, ON, Canada</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 6AM-10PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FitConnect. All rights reserved. | University of Windsor CS Project</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    
+                    const lines = mobileToggle.querySelectorAll('.hamburger-line');
+                    if (navMenu.classList.contains('active')) {
+                        lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                        lines[1].style.opacity = '0';
+                        lines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                    } else {
+                        lines[0].style.transform = 'none';
+                        lines[1].style.opacity = '1';
+                        lines[2].style.transform = 'none';
+                    }
+                });
+            }
+
+            // Filter functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const trainerCards = document.querySelectorAll('.trainer-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.dataset.filter;
+                    
+                    trainerCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'block';
+                            card.classList.add('animate-in');
+                        } else {
+                            const specialties = card.dataset.specialty;
+                            if (specialties && specialties.includes(filterValue)) {
+                                card.style.display = 'block';
+                                card.classList.add('animate-in');
+                            } else {
+                                card.style.display = 'none';
+                                card.classList.remove('animate-in');
+                            }
+                        }
+                    });
+                });
+            });
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.trainer-card, .featured-content').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Header scroll effect
+            let lastScrollTop = 0;
+            const header = document.querySelector('.main-header');
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // Scrolling down
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+
+            // Add particle effect to page header
+            const pageHeader = document.querySelector('.page-header');
+            if (pageHeader) {
+                for (let i = 0; i < 20; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.position = 'absolute';
+                    particle.style.width = '4px';
+                    particle.style.height = '4px';
+                    particle.style.background = 'radial-gradient(circle, #f97316, #ef4444)';
+                    particle.style.borderRadius = '50%';
+                    particle.style.opacity = '0.6';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.animationName = 'particle-float';
+                    particle.style.animationDuration = (Math.random() * 3 + 5) + 's';
+                    particle.style.animationIterationCount = 'infinite';
+                    particle.style.animationTimingFunction = 'ease-in-out';
+                    particle.style.animationDelay = Math.random() * 5 + 's';
+                    pageHeader.appendChild(particle);
+                }
+            }
+
+            // Add hover effects to trainer cards
+            trainerCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) rotate(1deg) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) rotate(0deg) scale(1)';
+                });
+            });
+
+            // Dynamic rating stars (could be expanded for actual ratings)
+            const ratings = document.querySelectorAll('.stat-value');
+            ratings.forEach(rating => {
+                if (rating.textContent.includes('.')) {
+                    const value = parseFloat(rating.textContent);
+                    if (value >= 4.5) {
+                        rating.style.color = 'var(--success-color)';
+                    } else if (value >= 4.0) {
+                        rating.style.color = 'var(--primary-color)';
+                    } else {
+                        rating.style.color = 'var(--accent-color)';
+                    }
+                }
+            });
+        });
+
+        // Add particle animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes particle-float {
+                0%, 100% { 
+                    transform: translateY(100vh) translateX(0px) scale(0);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 0.6;
+                    transform: scale(1);
+                }
+                90% {
+                    opacity: 0.6;
+                    transform: scale(1);
+                }
+                100% { 
+                    transform: translateY(-100px) translateX(100px) scale(0);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Video
+        document.addEventListener('DOMContentLoaded', function() {
+        // Video support detection
+        const video = document.querySelector('.trainer-video');
+            if (video) {
+                video.addEventListener('error', function() {
+                 // If video fails to load, show fallback image
+                 document.querySelector('.featured-image').classList.add('no-video');
+                });
+        
+        // Check if video can play
+        const canPlay = video.canPlayType('video/mp4');
+             if (canPlay === '') {
+                 document.querySelector('.featured-image').classList.add('no-video');
+            }
+        }
+       });
+    </script>
+</body>
+</html>
