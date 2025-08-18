@@ -17,9 +17,10 @@ This project was built as a learning exercise in full-stack development and desi
 - **Version Control:** Git & GitHub  
 
 ## Installation
-```bash
+'''bash
+
 # Clone the repository
-git clone https://github.com/thapa6/FitConnect.git
+git clone https://github.com/thapa6/fitconnect.git
 
 # Navigate into the folder
 cd FitConnect
