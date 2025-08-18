@@ -20,7 +20,7 @@ This project was built as a learning exercise in full-stack development and desi
 '''bash
 
 # Clone the repository
-git clone https://github.com/thapa6/fitconnect.git
+git clone https://github.com/thapaarya/fitconnect.git
 
 # Navigate into the folder
 cd FitConnect
